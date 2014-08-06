@@ -25,6 +25,7 @@ $.ajax({
     error: function (err) {
         console.log(err.status + " - " + err.statusText);
     }
+});
 */
 
 ko.computed.fn.postJSONKo = function(object) {
