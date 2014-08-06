@@ -1,3 +1,32 @@
+/**
+-----------------------------------------------------------------------------------
+- PostJSONKo v0.1
+-
+- @2014 - Márcio Vinícius Oliveira Sena (@marciovsena)
+-----------------------------------------------------------------------------------
+
+PostJSONKo is function Konockoutjs
+
+----------------------
+- Example of use         
+----------------------
+
+$.ajax({
+    type: "POST",
+    url: url,
+    dataType: 'json',
+    data: ko.computed.fn.postJSONKo(self.object()),
+    beforeSend: function (request) {
+        request.setRequestHeader('Content-Type', "application/json; charset=utf-8")
+    },
+    success: function (return) {
+        
+    },
+    error: function (err) {
+        console.log(err.status + " - " + err.statusText);
+    }
+*/
+
 ko.computed.fn.postJSONKo = function(object) {
 	var data = ko.toJSON(object);
   return data.replace("??","?\\?");
